@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_order_form_sales_purchase">
+            <field name="name">sale.order.sales.purchase</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+		<!-- field name="pricelist_id" position="after">
+			    <field name="shipping_days" readonly="1"/>
+                </field -->
+		<button name="action_quotation_send" position="after">
+	              <field name="has_purchase_order" invisible="1" />
+	              <button name="action_create_purchase_order" string="Create PO"
+			      states="progress,manual" 
+                	      type="object"
+	                      help="Create purchase order."
+        	              />
+              </button>
+	          <!-- field name="date_order" position="after">
+        	      <field name="requested_delivery_date" invisible="1" />
+	              <field name="purchase_orders" />
+        	  </field -->
+		<page string="Other Information" position="after">
+			<page string="Purchase Orders">
+				<field name="purchase_ids" readonly="1"/>
+				<group>
+					<field name="partner_wkng_gerber" />
+					<field name="wkng_gerber" />
+				</group>
+				<group string="Date information">
+					<field name="calculated_leadtime" readonly="1" />
+					<field name="manufacturing_days" readonly="1" />
+					<field name="shipping_days" readonly="1" />
+					<field name="additional_days" readonly="1" />
+					<field name="buffer_days" readonly="1" />
+					<field name="hub_days" readonly="1" />
+				</group>
+			</page>
+		</page>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_order_form_sales_purchase_custom">
+            <field name="name">sale.order.sales.purchase.shipping</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="elmatica_sales_customizations.view_order_form_freight_price"/>
+            <field name="arch" type="xml">
+		<field name="calculated_leadtime" position="before">
+			    <field name="shipping_days" readonly="1"/>
+                </field>
+            </field>
+	</record>
+
+        <record model="ir.ui.view" id="elmatica_fix_seller_ids">
+            <field name="name">elmatica.fix.seller_ids</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+		<field name="seller_ids" position="attributes">
+			    <attribute name="readonly">0</attribute>
+                </field>
+            </field>
+	</record>
+
+        <record model="ir.ui.view" id="elmatica_adds_minimum_planned_date">
+            <field name="name">elmatica.adds.minimum.planned.date</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+	       <!-- xpath expr="//form[@string='Purchase Order']/sheet/notebook/page[@string='Deliveries &amp; Invoices']/group/group/field[@name='minimum_planned_date']"  position="attributes">
+			<attribute name="invisible">1</attribute>
+	       </xpath -->
+	       <xpath expr="//form[@string='Purchase Order']/sheet/notebook/page[@string='Deliveries &amp; Invoices']/group/group/field[@name='minimum_planned_date']"  position="replace" />
+		<field name="date_approve" position="before">
+			<field name="hub_days" groups="purchase.group_purchase_user" />
+			<!-- field name="shipping_days" groups="purchase.group_purchase_user" / -->
+			<!-- field name="customer_partner_days_add" groups="purchase.group_purchase_user" / -->
+		</field>
+		<field name="date_order" position="before">
+			<field name="related_ppo" />
+			<field name="related_tpo" />
+			<field name="wkng_gerber" />
+		</field>
+		<field name="date_order" position="attributes">
+			<attribute name="invisible">1</attribute>
+		</field>
+		<button name="purchase_confirm" position="attributes">
+			<attribute name="invisible">0</attribute>
+		</button>
+            </field>
+	</record>
+
+        <record model="ir.ui.view" id="elmatica_purchase_order_adds_group">
+            <field name="name">elmatica.adds.minimum.planned.date</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="elmatica_purchase_flow.confirm_purchase_order_form"/>
+            <field name="arch" type="xml">
+		<field name="buffer_days" position="attributes">	
+			<attribute name="groups">purchase.group_purchase_user</attribute>
+		</field>
+		<field name="date_order" position="after">
+			<field name="minimum_planned_date" />
+		</field>
+		<!-- field name="customer_partner_days_add" position="attributes">	
+			<attribute name="groups">purchase.group_purchase_user</attribute>
+		</field>
+		<field name="shipping_days" position="attributes">	
+			<attribute name="groups">purchase.group_purchase_user</attribute>
+		</field -->
+            </field>
+	</record>
+	
+
+    </data>
+</openerp>
+
