@@ -2,14 +2,14 @@
 <openerp>
     <data>
         <!-- view specific to res.partner -->
-        <record model="ir.ui.view" id="view_partner_form_ntty">
+        <!-- record model="ir.ui.view" id="view_partner_form_ntty">
             <field name="name">view.partner.form.ntty</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
 	    <field name="sequence">100</field>
             <field name="arch" type="xml">
             </field>
-        </record>
+        </record -->
 
     </data>
 </openerp>
