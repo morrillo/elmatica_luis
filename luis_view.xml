@@ -10,7 +10,18 @@
             <field name="arch" type="xml">
             </field>
         </record -->
-Hola mundo
+                <record model="ir.ui.view" id="Lp_change_30May">
+            <field name="name">Lp_change_30May</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+	    <field name="sequence">97</field>
+            <field name="arch" type="xml">
+            	<!-- Change label of tabs -->
+<xpath expr="//page[@string='Public Holidays']" position="attributes">
+                           <attribute name='string'>Destination Country Holidays</attribute>
+                </xpath>
+            </field>
+        </record>
     </data>
 </openerp>
 
