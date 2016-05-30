@@ -17,7 +17,7 @@
 	    <field name="sequence">97</field>
             <field name="arch" type="xml">
             	<!-- Change label of tabs -->
-<xpath expr="//page[@string='Public Holidays']" position="attributes">
+<xpath expr="//page[@string='Destination country holidays']" position="attributes">
                            <attribute name='string'>Destination Country Holidays Gustavo</attribute>
                 </xpath>
             </field>
