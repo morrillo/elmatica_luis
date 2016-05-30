@@ -18,7 +18,7 @@
             <field name="arch" type="xml">
             	<!-- Change label of tabs -->
 <xpath expr="//page[@string='Public Holidays']" position="attributes">
-                           <attribute name='string'>Destination Country Holidays</attribute>
+                           <attribute name='string'>Destination Country Holidays Gustavo</attribute>
                 </xpath>
             </field>
         </record>
