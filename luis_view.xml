@@ -10,7 +10,7 @@
             <field name="arch" type="xml">
             </field>
         </record -->
-
+Hola mundo
     </data>
 </openerp>
 
