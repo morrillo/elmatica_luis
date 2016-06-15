@@ -34,21 +34,22 @@
                 </xpath>
 		<xpath expr="//field[@name='purchase_invoice_id']" position="replace">
 			<field name="purchase_invoice_id"  attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
-                </xpath -->
+                </xpath>
 		<xpath expr="//field[@name='purchase_orders']" position="replace">
 			<field name="purchase_orders"  attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
-                </xpath>
+                </xpath -->
 		<xpath expr="//field[@name='client_order_ref']" position="attributes">
 			<attribute name="string">Customer PO</attribute>
                 </xpath>
 		<xpath expr="//field[@name='client_order_ref']" position="replace">
 			<field name="client_order_ref"  attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
                 </xpath>
-		<xpath expr="//field[@name='requested_delivery_date']"  position="attributes">
+		<!-- elmatica_purchase_flow -->
+		<!-- xpath expr="//field[@name='requested_delivery_date']"  position="attributes">
 			<attribute name="required">0</attribute>
 			<attribute name="invisible">1</attribute>
 			<attribute name="string">to be removed</attribute>
-                </xpath>
+                </xpath -->
 	    </field>
 	</record>
 
