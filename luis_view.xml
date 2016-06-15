@@ -28,12 +28,13 @@
 			<attribute name="readonly">0</attribute>
                 </field>
 		<!-- Lp_conditional_hiding_for_quotations -->
-		<xpath expr="//field[@name='tracking']" position="replace">
+		<!-- elmatica_invoice -->
+		<!-- xpath expr="//field[@name='tracking']" position="replace">
 			<field name="tracking"  attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
                 </xpath>
 		<xpath expr="//field[@name='purchase_invoice_id']" position="replace">
 			<field name="purchase_invoice_id"  attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
-                </xpath>
+                </xpath -->
 		<xpath expr="//field[@name='purchase_orders']" position="replace">
 			<field name="purchase_orders"  attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
                 </xpath>
