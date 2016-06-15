@@ -27,7 +27,27 @@
 		<field name="notes_portal" position="attributes">
 			<attribute name="readonly">0</attribute>
                 </field>
-
+		<!-- Lp_conditional_hiding_for_quotations -->
+		<xpath expr="//field[@name='tracking']" position="replace">
+			<field name="tracking"  attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
+                </xpath>
+		<xpath expr="//field[@name='purchase_invoice_id']" position="replace">
+			<field name="purchase_invoice_id"  attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
+                </xpath>
+		<xpath expr="//field[@name='purchase_orders']" position="replace">
+			<field name="purchase_orders"  attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
+                </xpath>
+		<xpath expr="//field[@name='client_order_ref']" position="attributes">
+			<attribute name="string">Customer PO</attribute>
+                </xpath>
+		<xpath expr="//field[@name='client_order_ref']" position="replace">
+			<field name="client_order_ref"  attrs="{'invisible': [('state','in',('draft','sent'))]}"/>
+                </xpath>
+		<xpath expr="//field[@name='requested_delivery_date']"  position="attributes">
+			<attribute name="required">0</attribute>
+			<attribute name="invisible">1</attribute>
+			<attribute name="string">to be removed</attribute>
+                </xpath>
 	    </field>
 	</record>
 
