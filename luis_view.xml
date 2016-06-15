@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+	<record model="ir.ui.view" id="sale_order_form_luis">
+            <field name="name">sale.order.form.luis</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="elmatica_sales_customizations.view_order_form_freight_price"/>
+            <field name="arch" type="xml">
+		<!-- Lp_mandatory_contacts -->
+		<xpath expr="//field[@name='technical_contact']" position="replace">
+       	            <field name="technical_contact"  attrs="{'required':[('state','=','draft')]}"/>
+		</xpath>
+		<xpath expr="//field[@name='procurement_contact']" position="replace">
+                    <field name="procurement_contact"  attrs="{'required':[('state','=','draft')]}"/>
+		</xpath>
+	    </field>
+	</record>
+
+    </data>
+</openerp>
