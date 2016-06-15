@@ -75,6 +75,29 @@
                            <attribute name='invisible'>1</attribute>
                 </xpath>
 
+		<!-- Lp_hide_fields_and_button_in_SO -->
+		<!-- elmatica_invoice -->
+		<!-- xpath expr="//field[@name='rate_quoted']" position="attributes">
+                           <attribute name='invisible'>1</attribute>
+                </xpath -->
+		<!-- elmatica_purchase_flow -->
+		<!-- xpath expr="//field[@name='requested_delivery_date']" position="attributes">
+                           <attribute name='invisible'>1</attribute>
+                </xpath>
+		<xpath expr="//field[@name='template_id']" position="attributes">
+                           <attribute name='invisible'>1</attribute>
+                </xpath>
+		<xpath expr="//field[@name='confirm_portal']" position="attributes">
+                           <attribute name='invisible'>1</attribute>
+                </xpath>
+		<button string="ADD PACK" position="attributes">
+                	 <attribute name="invisible">1</attribute>
+	          </button>
+		<button string="Run Auto Lines" position="attributes">
+                	 <attribute name="invisible">1</attribute>
+	          </button -->
+
+
 
 	    </field>
 	</record>
