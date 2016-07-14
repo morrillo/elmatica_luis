@@ -65,9 +65,9 @@
                     <field name="quoted_rate" string="Exchange rate"/>
                 </xpath>
 		<!-- Additional changes as suggested by Didrik -->
-		<xpath expr="//page[@string='Order Lines']/field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='product_class']" position="replace">
+		<!-- xpath expr="//page[@string='Order Lines']/field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='product_class']" position="replace">
                     <field name="product_class" string="STD/QTA"/>
-                </xpath>
+                </xpath -->
 		<xpath expr="//page[@string='Order Lines']/field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='calculated_leadtime']" position="replace">
                     <field name="calculated_leadtime" string="Leadtime"/>
                 </xpath>
