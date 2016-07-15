@@ -15,9 +15,9 @@
                     <field name="procurement_contact"  attrs="{'required':[('state','=','draft')]}"/>
 		</xpath>
 		<!-- Lp_rw_order_log_and_rejected_lines -->
-                 <xpath expr="//group[@string='Rejected lines']" position="attributes">
+                 <!-- xpath expr="//group[@string='Rejected lines']" position="attributes">
 	                    <attribute name="string">Original data</attribute>
-                </xpath>
+                </xpath -->
 		<field name="order_log" position="attributes">
 			<attribute name="readonly">0</attribute>
                 </field>
@@ -65,9 +65,6 @@
                     <field name="quoted_rate" string="Exchange rate"/>
                 </xpath>
 		<!-- Additional changes as suggested by Didrik -->
-		<!-- xpath expr="//page[@string='Order Lines']/field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='product_class']" position="replace">
-                    <field name="product_class" string="STD/QTA"/>
-                </xpath -->
 		<xpath expr="//page[@string='Order Lines']/field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='calculated_leadtime']" position="replace">
                     <field name="calculated_leadtime" string="Leadtime"/>
                 </xpath>
