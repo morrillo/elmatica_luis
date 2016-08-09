@@ -65,9 +65,6 @@
                     <field name="quoted_rate" string="Exchange rate"/>
                 </xpath>
 		<!-- Additional changes as suggested by Didrik -->
-		<xpath expr="//page[@string='Order Lines']/field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='calculated_leadtime']" position="replace">
-                    <field name="calculated_leadtime" string="Leadtime"/>
-                </xpath>
 		<xpath expr="//page[@string='Order Lines']/field[@name='order_line']/tree[@string='Sales Order Lines']/field[@name='categ_id']" position="attributes">
                            <attribute name='invisible'>1</attribute>
                 </xpath>
